@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>huaban</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface DrawView ()
+/** path */
+@property (nonatomic, strong) UIBezierPath * path;
+/** paths */
+@property (nonatomic, strong) NSMutableArray * paths;
+
+@end
+@implementation DrawView
+/** 懒加载 保持唯一性 */
+- (NSMutableArray *)paths
+{
+    if (_paths == nil) {
+        _paths = [NSMutableArray array];
+    }
+    return _paths;
+}
+/** 初始化 */
+- (void)awakeFromNib
+{
+    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    [self addGestureRecognizer:pan];
+}
+
+- (void)pan:(UIPanGestureRecognizer *)pan
+{
+    CGPoint curP = [pan locationInView:self];
+
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        _path = [UIBezierPath bezierPath];
+        /** 设置起点 */
+        [_path moveToPoint:curP];
+        /** 保存描述好的路径 */
+        [self.paths addObject:_path];
+    }
+    [_path addLineToPoint:curP];
+    /** path更新 需要重绘, 调用重绘方法 */
+    [self setNeedsDisplay];
+}
+- (void)drawRect:(CGRect)rect
+{
+    for (UIBezierPath * path in self.paths) {
+        [path stroke];
+    }
+}
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8D7D54D9-CD7E-4209-854A-15619DC7F9D1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>多个path共存</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>多个path共存_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

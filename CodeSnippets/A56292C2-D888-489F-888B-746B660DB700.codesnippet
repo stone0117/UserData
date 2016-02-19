@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>nsthread</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSThread * thread = [[NSThread alloc] initWithTarget:self selector:@selector(run:) object:@"&lt;#parameters#&gt;"];
+    thread.name = @"&lt;#thread_name#&gt;";
+    [thread start];
+    /*
+     - (void)run:(NSString *)parameter
+     {
+        for (int i = 0; i &lt; 1000; i++) {
+        NSLog(@"%@ --- %@", parameter, [NSThread currentThread]);
+        }
+     }
+     */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A56292C2-D888-489F-888B-746B660DB700</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSThread</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSThread_stone_NSThread模板</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return &lt;#count #&gt;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * ID = @"cell";
+    
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    // 方法1: 在viewDidLoad里注册
+    //    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
+    
+    // 方法2: 自己创建
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    /*
+     UITableViewCellStyleDefault
+     UITableViewCellStyleValue1
+     UITableViewCellStyleValue2
+     UITableViewCellStyleSubtitle
+     */
+    return cell;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F37A3E46-7460-4A40-B1D3-C90C49800C4A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cell_normal_stone</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cell_normal_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

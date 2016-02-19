@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>yanchiPerformance</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/** NSObject 延迟执行 还可以带参数, 0.000012 耗时 */
+[self performSelector:@selector(run:) withObject:@"111" afterDelay:2.0];
+
+/** GCD 延迟执行 ,0.000020 耗时 */
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self run];
+//    });
+//
+/** NS 延迟执行 可以重复 , 0.000012 耗时 */
+//    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(run:) userInfo:@"111" repeats:YES];
+
+/*
+ - (void)run:(NSString *)str
+ {
+ NSLog(@"%@",str);
+ }
+ */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E82BFBB6-8C1B-467D-9889-6CE290E9320A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>yanchi</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>yanchiPerformance_stone_延迟执行</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>modelHead</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassInterfaceMethods</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/** &lt;#icon#&gt; */
+@property (nonatomic,strong) NSString * &lt;#icon#&gt;;
+/** &lt;#name#&gt; */
+@property (nonatomic,strong) NSString * &lt;#name#&gt;;
+/** &lt;#intro#&gt; */
+@property (nonatomic,strong) NSString * &lt;#intro#&gt;;
+
++ (instancetype)modelWithDict:(NSDictionary *)dict;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8A9D6108-AAB9-4000-9CE7-D86C22F39937</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>modelHead</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>modelHead_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

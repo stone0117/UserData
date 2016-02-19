@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>addObserver</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	//=== addObserver ========================
+	CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+	    //	    NSLog(@"----监听到RunLoop状态发生改变---%zd ", activity );
+	    switch (activity) {
+		    case 1UL &lt;&lt; 0:
+			    NSLog(@"即将进入Loop | Entry");
+			    break;
+
+		    case 1UL &lt;&lt; 1:
+			    NSLog(@"即将处理Tiemr | BeforeTimers");
+			    break;
+		    case 1UL &lt;&lt; 2:
+			    NSLog(@"即将处理Source | BeforeSources");
+			    break;
+		    case 1UL &lt;&lt; 5:
+			    NSLog(@"即将进入休眠 | BeforeWaiting");
+			    break;
+		    case 1UL &lt;&lt; 6:
+			    NSLog(@"刚从休眠中唤醒 | AfterWaiting");
+			    break;
+		    case 1UL &lt;&lt; 7:
+			    NSLog(@"即将退出Loop | kCFRunLoopExit");
+			    break;
+	    }
+	});
+	/*
+     kCFRunLoopEntry = (1UL &lt;&lt; 0),
+     kCFRunLoopBeforeTimers = (1UL &lt;&lt; 1),
+     kCFRunLoopBeforeSources = (1UL &lt;&lt; 2),
+     kCFRunLoopBeforeWaiting = (1UL &lt;&lt; 5),
+     kCFRunLoopAfterWaiting = (1UL &lt;&lt; 6),
+     kCFRunLoopExit = (1UL &lt;&lt; 7),
+     kCFRunLoopAllActivities = 0x0FFFFFFFU
+     */
+	CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopDefaultMode);
+	CFRelease(observer);
+    //=== addObserver ========================</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D229C0C0-714D-4CCC-AF8A-E3E12C613F5E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>addObserver</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>addObserver_stone_添加观察者</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>downloadImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> NSOperationQueue * queue = [[NSOperationQueue alloc] init];
+__block UIImage * image = nil;
+NSBlockOperation * op = [NSBlockOperation blockOperationWithBlock:^{
+    NSURL * url = [NSURL URLWithString:@"&lt;#file:///Users/stone/Pictures/Snip20150710_1.png#&gt;"];
+    NSData * data = [NSData dataWithContentsOfURL:url];
+    image = [UIImage imageWithData:data];
+}];
+[queue addOperation:op];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0BE303B7-73A0-4439-A4D2-56CD0E451679</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>downloadImage</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>downloadImage_stone_下载图片</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

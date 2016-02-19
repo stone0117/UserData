@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>xmldelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - &lt;NSXMLParserDelegate&gt;
+/**
+ * 解析到某个元素的结尾（比如解析&lt;/videos&gt;）
+ */
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    //    NSLog(@"didEndElement - %@", elementName);
+}
+
+/**
+ * 解析到某个元素的开头（比如解析&lt;videos&gt;）
+ */
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    if ([elementName isEqualToString:@"videos"])
+        return;
+    //    STONEVideo *video = [[STONEVideo alloc] init];
+    //    video.keyValues = attributeDict;
+    /** MJ框架的方法, 需要导入MJ框架 */
+    STONEVideo * video = [STONEVideo objectWithKeyValues:attributeDict];
+    [self.videos addObject:video];
+}
+
+/**
+ * 开始解析XML文档
+ */
+- (void)parserDidStartDocument:(NSXMLParser *)parser
+{
+    //    NSLog(@"parserDidStartDocument");
+}
+
+/**
+ * 解析完毕
+ */
+- (void)parserDidEndDocument:(NSXMLParser *)parser
+{
+    //    NSLog(@"parserDidEndDocument");
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D2A1EE38-22F1-4F54-96F8-A216252FAD94</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>xmldelegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>xmldelegate_stone_XML解析</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

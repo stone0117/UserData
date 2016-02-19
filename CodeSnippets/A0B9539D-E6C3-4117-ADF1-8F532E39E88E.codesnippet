@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makeSessionDataDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ // 获得NSURLSession对象
+ // configuration == （기기） 구성: 특정한 시스템을 구성하는 요소의 조합법.
+ //     默认会话模式（default）：工作模式类似于原来的NSURLConnection，使用的是基于磁盘缓存的持久化策略，使用用户keychain中保存的证书进行认证授权。
+ //     瞬时会话模式（ephemeral）：该模式不使用磁盘保存任何数据。所有和会话相关的caches，证书，cookies等都被保存在RAM中，因此当程序使会话无效，这些缓存的数据就会被自动清空。
+ //     后台会话模式（background）：该模式在后台完成上传和下载，在创建Configuration对象的时候需要提供一个NSString类型的ID用于标识完成工作的后台会话。
+ NSURLSession * session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
+ // 创建任务
+ NSURLSessionDataTask * task = [session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://120.25.226.186:32812/login?username=123&amp;pwd=4324"]]];
+ // 启动任务
+ [task resume];
+ */
+
+#pragma mark - &lt;NSURLSessionDataDelegate&gt;
+/**
+ * 1.接收到服务器的响应
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response
+ completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
+{
+    NSLog(@"%s", __func__);
+    // 允许处理服务器的响应，才会继续接收服务器返回的数据
+    completionHandler(NSURLSessionResponseAllow);
+    // void (^)(NSURLSessionResponseDisposition)
+}
+
+/**
+ * 2.接收到服务器的数据（可能会被调用多次）
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
+{
+    NSLog(@"%s", __func__);
+}
+
+/**
+ * 3.请求成功或者失败（如果失败，error有值）
+ */
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+{
+    NSLog(@"%s", __func__);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A0B9539D-E6C3-4117-ADF1-8F532E39E88E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>makeSessionDataDelegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>makeSessionDataDelegate_stone_session代理</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

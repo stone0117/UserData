@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>imgFrame</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            CGFloat scaleWH = image.size.width / image.size.height;
+            /** 知道高度, 求 width(宽度) */
+            //		self.imageView.frame = CGRectMake(50, 50, scaleWH * 200, 200);
+            /** 知道宽度, 求 height(高度) */
+            self.imageView.frame = CGRectMake(50, 50, 200, 200 / scaleWH);
+            self.imageView.image = image;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0C5A71D1-9AB1-48A6-8F75-4E5C99BAE1D3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>imgFrame</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>imgFrame_stone_imageView精确比例设置frame</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>deleteFromKeyWindow_从主窗口删除</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** 从主窗口中遍历出ActiveMenu 并删掉,  */
+    for (STONEActiveMenu * childView in STONEKeyWindow.subviews) {
+        if ([childView isKindOfClass:self]) {
+            [childView setUpHideAnim:point completion:completion];
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9B201EFB-1146-4DBC-AD4C-F7CA6EEE3EFD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>deleteFromKeyWindow</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>deleteFromKeyWindow_stone_从主窗口删除</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

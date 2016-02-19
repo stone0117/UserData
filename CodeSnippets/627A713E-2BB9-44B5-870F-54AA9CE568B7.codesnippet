@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>testImgView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSURL * url = [NSURL fileURLWithPath:@"/Users/stone/Pictures/sucai/img04.jpg"];
+    NSData * data = [NSData dataWithContentsOfURL:url];
+    UIImage * image = [[UIImage alloc] initWithData:data];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>627A713E-2BB9-44B5-870F-54AA9CE568B7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>testImgView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>testImgView_stone_测试用imageView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

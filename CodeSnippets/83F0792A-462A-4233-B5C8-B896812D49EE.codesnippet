@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>originalImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIImage * image = [UIImage imageNamed:@"Mylottery_config"];
+    /** 取消系统自带 蓝色渲染, */
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>83F0792A-462A-4233-B5C8-B896812D49EE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>originalImage</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>originalImage_stone_取消系统自带蓝色渲染图片</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

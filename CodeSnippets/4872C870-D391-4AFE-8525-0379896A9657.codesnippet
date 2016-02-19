@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>toast</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)toast:(NSString *)content superView:(UIView *)superView
+{
+    UILabel * hud = [[UILabel alloc] init];
+    hud.frame = CGRectMake(32, 357, 311, 21);
+    hud.backgroundColor = [UIColor grayColor];
+    hud.text = content;
+    hud.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:11];
+    hud.textAlignment = NSTextAlignmentCenter;
+    [superView addSubview:hud];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        hud.alpha = 0.0;
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4872C870-D391-4AFE-8525-0379896A9657</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>toast</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>toast_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

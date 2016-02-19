@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>xmljiexi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSURL * url = [NSURL URLWithString:addStr(RootURLPath, @"video?type=XML")];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    /** 注意 异步函数 把事件加入到队列之后的 生命周期 &amp; 执行顺序. */
+    // queue:[[NSOperationQueue alloc] init] &amp; [NSOperationQueue mainQueue] 选择哪个?? 有何不同??
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse * response, NSData * data, NSError * connectionError) {
+                               /** XML解析... */
+                               NSXMLParser * parser = [[NSXMLParser alloc] initWithData:data];
+                               // 设置代理
+                               parser.delegate = self;
+                               // 开始解析XML
+                               [parser parse];
+                               // 刷新表格
+                               [self.tableView reloadData];
+                           }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C294E223-4B4A-4C96-B978-C3C950B9FA09</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>xmljiexi</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>xmljiexi_stone_XML解析_SAX解析</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>simulateModal</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** 模拟modal */
+	UIView * mView = [[UIView alloc] initWithFrame:self.view.bounds];
+	[self.view addSubview:mView];
+	CGRect frame = self.view.bounds;
+	frame.origin = CGPointMake(0, self.view.bounds.size.height);
+	mView.frame = frame;
+	mView.backgroundColor = [UIColor orangeColor];
+	[UIView animateWithDuration:0.5
+	    animations:^{
+		mView.frame = self.view.bounds;
+	    }
+	    completion:^(BOOL finished){
+
+	    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0E41A50D-1616-4DE5-8828-079E71124380</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>simulateModal</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>simulateModal_stone_模拟modal</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

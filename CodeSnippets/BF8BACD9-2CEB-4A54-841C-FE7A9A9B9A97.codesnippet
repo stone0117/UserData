@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>clipimages</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSMutableArray *)btnImages
+{
+
+    if (_btnImages == nil) {
+        // 加载大图片
+        int count = 12;
+        UIImage * bigImage = [UIImage imageNamed:@"LuckyAstrology"];
+        /** 获取当前像素和点得比例 */
+        CGFloat scale = [UIScreen mainScreen].scale; //  像素/点 的比例
+        CGFloat imageW = bigImage.size.width / count * scale; //像素
+        CGFloat imageH = bigImage.size.height * scale; //像素
+        // 加载按钮的图片
+        // 计算裁减区域
+        NSMutableArray * mtarr = [NSMutableArray array];
+        for (int i = 0; i &lt; count; i++) {
+
+            CGRect clipR = CGRectMake(i * imageW, 0, imageW, imageH);
+            // 裁减图片
+            CGImageRef imgR = CGImageCreateWithImageInRect(bigImage.CGImage, clipR);
+
+            UIImage * image = [UIImage imageWithCGImage:imgR];
+
+            [mtarr addObject:image];
+        }
+        _btnImages = mtarr;
+    }
+
+    return _btnImages;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BF8BACD9-2CEB-4A54-841C-FE7A9A9B9A97</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>clipImages</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>clipImages_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

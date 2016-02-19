@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>downloadDelegateBigFile_(大文件)</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//#define STONEFile [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"minion_15.mp4"]
+//@interface ViewController () &lt;NSURLConnectionDataDelegate&gt;
+//@property (weak, nonatomic) IBOutlet UIProgressView * progressView;
+// /** 文件的总长度 */
+//@property (nonatomic, assign) NSInteger contentLength;
+// /** 当前下载的总长度 */
+//@property (nonatomic, assign) NSInteger currentLength;
+//
+// /** 文件句柄对象 */
+//@property (nonatomic, strong) NSFileHandle * handle;
+//@end
+#pragma mark - &lt;NSURLConnectionDataDelegate&gt;
+/**
+ * 接收到响应的时候：创建一个空的文件
+ */
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
+{
+	// 获得文件的总长度
+	self.contentLength = [response.allHeaderFields[@"Content-Length"] integerValue];
+
+	// 创建一个空的文件
+	[[NSFileManager defaultManager] createFileAtPath:STONEFile contents:nil attributes:nil];
+
+	// 创建文件句柄
+	self.handle = [NSFileHandle fileHandleForWritingAtPath:STONEFile];
+}
+
+/**
+ * 接收到具体数据：马上把数据写入一开始创建好的文件
+ */
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+	// 指定数据的写入位置 -- 文件内容的最后面
+	[self.handle seekToEndOfFile];
+
+	// 写入数据
+	[self.handle writeData:data];
+
+	// 拼接总长度
+	self.currentLength += data.length;
+
+	// 进度
+	self.progressView.progress = 1.0 * self.currentLength / self.contentLength;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	// 关闭handle
+	[self.handle closeFile];
+	self.handle = nil;
+
+	// 清空长度
+	self.currentLength = 0;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EB870A6E-8DF8-4ABB-A660-24661C417508</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>downloadDelegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>downloadDelegate_stone_(大大文件下载)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

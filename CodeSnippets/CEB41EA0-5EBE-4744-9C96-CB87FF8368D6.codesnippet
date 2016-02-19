@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makeCacheFile</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/** 缓存文件路径 + 文件名(容器) */
+/** NSSearchPathForDirectoriesInDomains 返回的是数组, 得把括号打开, 所以取第一个. */
+NSString * cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+NSString * filePath = [cachePath stringByAppendingPathComponent:response.suggestedFilename];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CEB41EA0-5EBE-4744-9C96-CB87FF8368D6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>makeCacheFile</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>makeCacheFile_stone_缓存路径</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

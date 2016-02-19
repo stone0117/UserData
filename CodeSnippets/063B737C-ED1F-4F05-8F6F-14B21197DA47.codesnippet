@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jiugongge</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSArray * images = @[ @"luck_entry_birthday_button_normal", @"luck_entry_number_button_normal", @"luck_entry_roulette_button_normal", @"luck_entry_birthday_button_normal" ];
+//=== stone ====================================
+int cols = &lt;#2#&gt;;
+NSUInteger count = images.count;
+NSUInteger rows = ((count - 1) / cols) + 1;
+UIImage * image = [UIImage imageNamed:@"&lt;#填写图片名,为了计算图片尺寸#&gt;"];
+CGFloat x = 0;
+CGFloat y = 0;
+CGFloat width = image.size.width;
+CGFloat height = image.size.height;
+/**
+ (cols - 1) 还是 (cols + 1)
+
+ 间距个数 &lt; 列数   ---&gt;  (cols - 1)
+ 间距个数 &gt; 列数   ---&gt;  (cols + 1)
+ &lt;#+1 还是 -1 得写#&gt;
+ */
+CGFloat marginX = (self.bounds.size.width - cols * width) / (cols - 1);
+CGFloat marginY = (self.bounds.size.height - rows * height) / (cols + 1);
+
+int col = 0;
+int row = 0;
+/** 是否贴边开始 , 如果不是的话 就填开始的间距 */
+int startBorderX = &lt;#0#&gt;;
+int startBorderY = &lt;#marginY#&gt;;
+
+for (int i = 0; i &lt; count; i++) {
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setBackgroundImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
+    //======================== stone ===
+    col = i % cols;
+    row = i / cols;
+    //======================== stone ===
+    x = startBorderX + col * (marginX + width);
+    y = startBorderY + row * (height + marginY);
+    btn.frame = CGRectMake(x, y, width, height);
+    /** 颜色测试 */
+    btn.backgroundColor = [UIColor &lt;#clearColor#&gt;];
+    [self addSubview:btn];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>063B737C-ED1F-4F05-8F6F-14B21197DA47</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>jiugongge_九宫格_最新框架</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>jiugongge_stone_九宫格_最新框架</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

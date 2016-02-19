@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>autoScroll_自动滚动</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.deals.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B220FC54-CD29-4E7F-B824-CD0518B180D0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>autoScroll_自动滚动</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>autoScroll_自动滚动_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

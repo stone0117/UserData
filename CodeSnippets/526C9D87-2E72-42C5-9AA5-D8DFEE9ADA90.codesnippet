@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>downloadDelegate_(小文件下载)</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//@interface ViewController () &lt;NSURLConnectionDataDelegate&gt;
+
+/*
+    NSURL * url = [NSURL URLWithString:@"http://120.25.226.186:32812/resources/videos/minion_15.mp4"];
+	NSURLRequest * request = [NSURLRequest requestWithURL:url];
+	[NSURLConnection connectionWithRequest:request delegate:self];
+ */
+
+#pragma mark - &lt;NSURLConnectionDataDelegate&gt;
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
+{
+    //    /** 文件的总长度 */
+    //    @property (nonatomic, assign) NSInteger contentLength;
+    self.contentLength = [response.allHeaderFields[@"Content-Length"] integerValue];
+    //    /** 文件数据 */
+    //    @property (nonatomic, strong) NSMutableData * fileData;
+    self.fileData = [NSMutableData data];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.fileData appendData:data];
+    CGFloat progress = 1.0 * self.fileData.length / self.contentLength;
+    NSLog(@"已下载：%.2f%%", (progress)*100);
+    self.progressView.progress = progress;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"下载完毕");
+    // 将文件写入沙盒中
+    // 缓存文件夹
+    NSString * caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    // 文件路径
+    NSString * file = [caches stringByAppendingPathComponent:@"minion_15.mp4"];
+    // 写入数据
+    [self.fileData writeToFile:file atomically:YES];
+    self.fileData = nil;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>526C9D87-2E72-42C5-9AA5-D8DFEE9ADA90</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>downloadDelegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>downloadDelegate_stone_(小文件下载)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

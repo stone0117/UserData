@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>barrier</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)barrier
+{
+    /** barrier 需 配合 ***注:自定义并发队列*** 使用, 全局并发队列 不好使 */
+	dispatch_queue_t queue = dispatch_queue_create("com.dispatch.concurrent", DISPATCH_QUEUE_CONCURRENT);
+    // 执行顺序 1 or 2 --- barrier --- 3 or 4
+	dispatch_async(queue, ^{
+	    NSLog(@"----1-----%@", [NSThread currentThread]);
+	});
+	dispatch_async(queue, ^{
+	    NSLog(@"----2-----%@", [NSThread currentThread]);
+	});
+    //------------------------------------------------
+	dispatch_barrier_async(queue, ^{
+	    NSLog(@"----barrier-----%@", [NSThread currentThread]);
+	});
+    //------------------------------------------------
+	dispatch_async(queue, ^{
+	    NSLog(@"----3-----%@", [NSThread currentThread]);
+	});
+	dispatch_async(queue, ^{
+	    NSLog(@"----4-----%@", [NSThread currentThread]);
+	});
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>34136412-5096-4BB6-B353-ED12A24E54EF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>barrier</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>barrier_stone_屏障</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

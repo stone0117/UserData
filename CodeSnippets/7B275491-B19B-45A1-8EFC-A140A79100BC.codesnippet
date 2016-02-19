@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>clipImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        UIGraphicsBeginImageContextWithOptions(self.imageView.bounds.size, NO, 0);
+
+        UIBezierPath * path = [UIBezierPath bezierPathWithRect:self.clipView.frame];
+
+        [path addClip];
+
+        CGContextRef context = UIGraphicsGetCurrentContext();
+
+        [self.imageView.layer renderInContext:context];
+
+        UIImage * clipImage = UIGraphicsGetImageFromCurrentImageContext();
+        self.imageView.image = clipImage;
+        UIGraphicsEndImageContext();</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7B275491-B19B-45A1-8EFC-A140A79100BC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>clipImage</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>clipImage_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

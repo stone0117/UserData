@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makeButton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+btn.frame = CGRectMake(200, 200, 100, 44);
+[btn setTitle:@"Button" forState:UIControlStateNormal];
+#define path(name) [NSString stringWithFormat:@"/Users/stone/Pictures/button/%@", name]
+UIImage * normal = [UIImage imageWithContentsOfFile:path(@"normal.png")];
+UIImage * highlight = [UIImage imageWithContentsOfFile:path(@"highlight.png")];
+UIImage * disable = [UIImage imageWithContentsOfFile:path(@"disable.png")];
+[btn setBackgroundImage:normal forState:UIControlStateNormal];
+[btn setBackgroundImage:highlight forState:UIControlStateHighlighted];
+[btn setBackgroundImage:disable forState:UIControlStateDisabled];
+[btn.layer setMasksToBounds:YES];
+[btn.layer setCornerRadius:6.0];
+[self.view addSubview:btn];
+[btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+/*
+ - (void)btnClick:(UIButton *)btn {
+ }
+ */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FD2056C2-F239-4D0C-BC19-C007F81FE07D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>makeButton</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>makeButton_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

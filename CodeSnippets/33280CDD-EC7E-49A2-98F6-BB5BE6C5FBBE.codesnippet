@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>charFrom_unichar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>int count = 0;
+for (int i = 0; i &lt; str.length; i++) {
+    unichar c = [str characterAtIndex:i];
+    if (c &gt;= 'A' &amp;&amp; c &lt;= 'Z') {
+        count++;
+    }
+}
+NSLog(@"%d", count);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>33280CDD-EC7E-49A2-98F6-BB5BE6C5FBBE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>charFrom_unichar</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>charFrom_unichar_ stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

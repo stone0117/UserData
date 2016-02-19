@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makeBody</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//--- 创建容器 ----------------------------------------
+request.HTTPMethod = @"POST";
+/** 注: 不能少, 自定义分割线 */
+NSString * boundary = @"520it";
+// 设置请求头(告诉告诉服务器,这是一个文件上传的请求)
+[request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary] forHTTPHeaderField:@"Content-Type"];
+// 设置请求体
+NSMutableData * body = [NSMutableData data];
+
+NSString * typeName = @"file";
+NSString * filename = @"placeholder";
+NSString * contentType = @"image/png";
+NSString * strBegin = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\nContent-Type: %@\r\n\r\n", boundary, typeName, filename, contentType];
+[body appendData:[strBegin dataUsingEncoding:NSUTF8StringEncoding]];
+/** 内容开始 */
+//=== 上传什么文件? ===================== stone ===
+UIImage * image = [UIImage imageNamed:@"placeholder"];
+[body appendData:UIImagePNGRepresentation(image)];
+//=== author = ??? ================================
+NSString * username = @"stone";
+NSString * author = [NSString stringWithFormat:@"\r\n--%@\r\nContent-Disposition: form-data; name=\"username\"\r\n\r\n%@", boundary, username];
+[body appendData:[author dataUsingEncoding:NSUTF8StringEncoding]];
+//================================================
+/** 内容结束 */
+NSString * strEnd = [NSString stringWithFormat:@"\r\n--%@--\r\n",boundary];
+[body appendData:[strEnd dataUsingEncoding:NSUTF8StringEncodin</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8A7235F3-6713-4460-97BE-2AA348B52150</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>makeBody</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>makeBody_stone_POST请求体</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

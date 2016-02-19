@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>charFromStr</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        NSRange range;
+		for (int i = 0; i &lt; str.length; i++) {
+			range = [str rangeOfComposedCharacterSequenceAtIndex:i];
+
+			NSString * subStr = [str substringWithRange:range];
+            NSLog(@"%@",subStr);
+		}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5ED2D46B-65DC-4DD5-8887-90B4FE4263DF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>charFromStr</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>charFromStr _ stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

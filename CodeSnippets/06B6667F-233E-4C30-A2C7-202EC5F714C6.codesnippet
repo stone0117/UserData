@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>testTime</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	/*
+    //方法1:
+    CFTimeInterval begin = CFAbsoluteTimeGetCurrent();
+    &lt;#code#&gt;
+    CFTimeInterval end = CFAbsoluteTimeGetCurrent();
+    NSLog(@"%f", end - begin);
+    //======================== stone ===
+    //方法2:
+    NSDate * begin = [NSDate date];
+    &lt;#code#&gt;
+    NSDate * end = [NSDate date];
+    NSLog(@"%f", [end timeIntervalSinceDate:begin]);
+    */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>06B6667F-233E-4C30-A2C7-202EC5F714C6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>testTime</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>testTime_stone_性能</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

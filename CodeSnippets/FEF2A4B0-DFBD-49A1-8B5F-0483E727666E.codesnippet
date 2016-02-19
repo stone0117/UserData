@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>upload</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	// 创建请求
+	NSURL * url = [NSURL URLWithString:@"http://120.25.226.186:32812/upload"];
+	NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+	request.HTTPMethod = @"POST";
+	// 设置请求头(告诉告诉服务器,这是一个文件上传的请求)
+    NSString * boundary = @"520it";
+	[request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary] forHTTPHeaderField:@"Content-Type"];
+	// 设置请求体
+	NSMutableData * body = [NSMutableData data];
+	//--- 创建容器 ----------------------------------------
+	//    NSString * boundary = @"520it";
+	NSString * filename = @"placeholder";
+	NSString * contentType = @"image/png";
+	NSString * strBegin = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\nContent-Type: %@\r\n\r\n", boundary, filename, contentType];
+	[body appendData:[strBegin dataUsingEncoding:NSUTF8StringEncoding]];
+	//=== 上传什么文件? ===================== stone ===
+	UIImage * image = [UIImage imageNamed:@"placeholder"];
+	[body appendData:UIImagePNGRepresentation(image)];
+	//================================================
+	NSString * username = @"stone";
+	NSString * strEnd = [NSString stringWithFormat:@"\r\n--%@\r\nContent-Disposition: form-data; name=\"username\"\r\n\r\n%@\r\n--%@--\r\n", boundary, username, boundary];
+	[body appendData:[strEnd dataUsingEncoding:NSUTF8StringEncoding]];
+	//--- 填充容器 完毕 ----------------------------------------
+	request.HTTPBody = body;
+	NSLog(@"%@", [[NSString alloc] initWithData:body encoding:kCFStringEncodingUTF8]);
+	[NSURLConnection sendAsynchronousRequest:request
+					   queue:[NSOperationQueue mainQueue]
+			       completionHandler:^(NSURLResponse * response, NSData * data, NSError * connectionError) {
+				   NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+			       }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FEF2A4B0-DFBD-49A1-8B5F-0483E727666E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>upload</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>upload_stone_上传图片</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

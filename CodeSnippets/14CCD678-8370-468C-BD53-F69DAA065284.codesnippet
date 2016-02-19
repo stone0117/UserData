@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>runtime</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	/** 步骤1: 查看对象的类, cmd + 鼠标左键盘 , 发现是 UIGestureRecognizer */
+
+	/** 步骤2: 遍历成员属性 */
+	unsigned int count = 0;
+	Ivar * ivars = class_copyIvarList([&lt;#UIGestureRecognizer #&gt; class], &amp;count);
+	for (int i = 0; i &lt; count; i++) {
+		Ivar ivar = ivars[i];
+		NSString * ivarName = @(ivar_getName(ivar));
+		NSLog(@"%@", ivarName);
+	}
+
+	/** 步骤3: KVC 取值 */
+	/** 原来是写id得打印发现有 () 就知道是 NSArray了, 也可以 [对象 class]方法查看是什么类 */
+	NSArray * targets = [self.interactivePopGestureRecognizer valueForKey:@"_targets"];
+	id objc = [targets firstObject];
+	id target = [objc valueForKey:@"target"];
+	NSLog(@"%@", target);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>14CCD678-8370-468C-BD53-F69DAA065284</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>runtime</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>runtime_stone_运行时遍历成员属性</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

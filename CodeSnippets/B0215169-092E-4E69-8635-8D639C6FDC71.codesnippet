@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>baozhengINT</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	char str[1024];
+	printf("请输入一个整数:\n");
+	scanf("%s", str);
+	for (int i = 0; str[i] != '\0'; i++) {
+		//非int 类型有 , 能输入的有 double类型, 字符 &amp; 字符串
+		if (str[i] &lt; '0' || str[i] &gt; '9') {
+			if (str[i] == '-') {
+				continue;
+			}
+			printf("格式错误! 请重新输入: \n");
+			scanf("%s", str);
+			i = -1;
+			continue;
+		}
+	}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B0215169-092E-4E69-8635-8D639C6FDC71</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>baozhengINT</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>baozhengINT_sonte</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>wvd</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - &lt;UIWebViewDelegate&gt;
+/**
+ * 每当webView即将发送一个请求之前，都会调用这个方法
+ * 返回YES：允许加载这个请求
+ * 返回NO：禁止加载这个请求
+ */
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    /** 请求地址中有 life 就不能访问... */
+    if ([request.URL.absoluteString containsString:@"life"]) {
+        return NO;
+    }
+    return YES;
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+//    self.backItem.enabled = webView.canGoBack;
+//    self.forward.enabled = webView.canGoForward;
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+//    self.backItem.enabled = webView.canGoBack;
+//    self.forward.enabled = webView.canGoForward;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>86F42DD6-5223-45B4-828D-CBC03B89980C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>wvd</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>wvd_stone_webViewDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

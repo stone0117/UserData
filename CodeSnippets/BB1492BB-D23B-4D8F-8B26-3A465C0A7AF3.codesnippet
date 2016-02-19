@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>diedai迭代遍历</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /*
+     有两种办法，
+     第一种是可以修改 static 全局变量；
+     第二种是可以修改用新关键字 __block 修饰的变量
+     */
+    /** __block 修饰是关键. */
+    __block NSMutableArray * mtarr = [NSMutableArray array];
+	NSArray * arr = @[ @"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9" ];
+	NSInteger count = arr.count;
+	dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+	dispatch_apply(count, queue, ^(size_t index) {
+	    NSString * str = arr[index];
+        NSLog(@"%@",str);
+        [mtarr addObject:str];
+	});
+    NSLog(@"%@",mtarr);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BB1492BB-D23B-4D8F-8B26-3A465C0A7AF3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>diedai</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>diedai_stone_迭代_像set</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

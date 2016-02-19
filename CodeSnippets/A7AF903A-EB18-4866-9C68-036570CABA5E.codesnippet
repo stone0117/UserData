@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>caanimationgroup</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    CAAnimationGroup * group = [CAAnimationGroup animation];
+    /** 缩放 */
+    //没有设置fromValue说明当前状态作为初始值
+    CABasicAnimation * scale = [CABasicAnimation animation];
+    scale.keyPath = @"transform.scale";
+    scale.toValue = @(arc4random_uniform(10)*0.1+0.1);
+
+    /** 旋转 */
+    CABasicAnimation * rotation = [CABasicAnimation animation];
+    rotation.keyPath = @"transform.rotation";
+    rotation.toValue = @(arc4random_uniform(M_PI));
+
+    /** 平移 */
+    CABasicAnimation * position = [CABasicAnimation animation];
+    position.keyPath = @"position";
+    position.toValue = [NSValue valueWithCGPoint:CGPointMake(arc4random_uniform(375), arc4random_uniform(667))];
+    group.animations = @[scale,rotation,position];
+
+    /** 取消动画反弹 , 设置动画完成的时候不要移除动画 */
+    group.removedOnCompletion = NO;
+
+    /** 设置动画执行完成要保持最新的效果 */
+    group.fillMode = kCAFillModeForwards;
+
+    [self.redView.layer addAnimation:group forKey:nil];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A7AF903A-EB18-4866-9C68-036570CABA5E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>caanimationgroup</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>caanimationgroup_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

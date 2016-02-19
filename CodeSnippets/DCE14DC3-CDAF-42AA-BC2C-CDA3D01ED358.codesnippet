@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>addView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIView * &lt;#mView#&gt; = [[UIView alloc] init];
+&lt;#mView#&gt;.backgroundColor = [UIColor &lt;#orangeColor#&gt;];
+    &lt;#mView#&gt;.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:&lt;#mView#&gt;];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DCE14DC3-CDAF-42AA-BC2C-CDA3D01ED358</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>addView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>addView_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

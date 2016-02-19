@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>colrow</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** 容器宽度 */
+    CGFloat shopW = 50;
+    /** 容器高度 */
+    CGFloat shopH = 70;
+    /** 一行显示个数 */
+    int col = 4;
+    /** 行空白间距 */
+    CGFloat colMargin = (self.shopsView.frame.size.width - col * shopW) / (col - 1);
+    /** 列空白间距 */
+    CGFloat rowMargin = (self.shopsView.frame.size.height - col * shopH) / (col - 1);
+    /** 下标(index) == 子View的个数 */
+    NSUInteger index = self.shopsView.subviews.count;
+    /** 下一个商品的x坐标 == 商品宽度+行间距 */
+    CGFloat shopX = (index % col) * (shopW + colMargin);
+    CGFloat shopY = (index / col) * (shopH + rowMargin);
+
+    STONEShopView * shopView = [STONEShopView shopView];
+    shopView.frame = CGRectMake(shopX, shopY, shopW, shopH);
+
+    shopView.shop = self.shops[index];
+
+    [self.shopsView addSubview:shopView];
+
+    [self check];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>89310BDE-1A22-400D-81E2-CAAA0E4F39A9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>换行,换列</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>换行,换列_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>danlimoshi_传统单例模式_古典</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ .h 文件
+ #import &lt;Foundation/Foundation.h&gt;
+
+ @interface STONEPerson : NSObject
+ + (instancetype)sharedInstance;
+ @end
+ */
+
+// .m 文件
+#import "STONEPerson.h"
+
+@interface STONEPerson ()
+
+@end
+
+@implementation STONEPerson
+
+static id _instance;
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    @synchronized(self)
+    {
+        if (_instance == nil) {
+            _instance = [super allocWithZone:zone];
+        }
+    }
+    return _instance;
+}
+
++ (instancetype)sharedInstance
+{
+    @synchronized(self)
+    {
+        if (_instance == nil) {
+            _instance = [[self alloc] init];
+        }
+    }
+    return _instance;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3793747C-5719-4741-8519-1F11C4ABBA4D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>danlimoshi</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>danlimoshi_stone_传统单例模式</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

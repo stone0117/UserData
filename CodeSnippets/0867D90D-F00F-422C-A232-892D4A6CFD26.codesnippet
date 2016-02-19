@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cakeyframeanimation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        /** 创建动画 */
+        CAKeyframeAnimation * anim = [CAKeyframeAnimation animation];
+        /** 更改layer的哪个属性 */
+        anim.keyPath = @"position";
+        /** 动画路径 */
+        anim.path = self.path.CGPath;
+        /** 动画速度 */
+        anim.duration = 1.0;
+        /** 执行次数 */
+        anim.repeatCount = MAXFLOAT;
+        /** 通过MyAnim可以取回相应的动画对象,也可以设置为nil ，比如用来中途取消动画 */
+        [self.imageView.layer addAnimation:anim forKey:@"MyAnim"];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0867D90D-F00F-422C-A232-892D4A6CFD26</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cakeyframeanimation</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cakeyframeanimation_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

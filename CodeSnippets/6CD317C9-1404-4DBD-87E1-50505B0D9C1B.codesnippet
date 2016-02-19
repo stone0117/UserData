@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>constHead</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import &lt;UIKit/UIKit.h&gt;
+
+UIKIT_EXTERN const CGFloat STONERed;
+UIKIT_EXTERN const CGFloat STONEGreen;
+UIKIT_EXTERN const CGFloat STONEBlue;
+UIKIT_EXTERN const CGFloat STONEAlpha;
+UIKIT_EXTERN const int STONEAge;
+UIKIT_EXTERN NSString * const STONEName;
+
+/*
+//.m 文件内容
+#import &lt;UIKit/UIKit.h&gt;
+
+const CGFloat STONERed = 0.4;
+const CGFloat STONEGreen = 0.6;
+const CGFloat STONEBlue = 0.7;
+const CGFloat STONEAlpha = 1.0;
+const int STONEAge = 20;
+NSString * const STONEName = @"jack";
+*/</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6CD317C9-1404-4DBD-87E1-50505B0D9C1B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>constHead</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>constHead_stone_const头文件</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jianqiezhantie_传统方式</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ * 传统文件剪切粘贴
+ */
+- (void)moveFile
+{
+	NSString * from = @"/Users/xiaomage/Desktop/From";
+	NSString * to = @"/Users/xiaomage/Desktop/To";
+
+	NSFileManager * mgr = [NSFileManager defaultManager];
+	NSArray * subpaths = [mgr subpathsAtPath:from];
+
+	for (NSString * subpath in subpaths) {
+		NSString * fromFullpath = [from stringByAppendingPathComponent:subpath];
+		NSString * toFullpath = [to stringByAppendingPathComponent:subpath];
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		    // 剪切
+		    [mgr moveItemAtPath:fromFullpath toPath:toFullpath error:nil];
+		});
+	}
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A22DFDCC-F87A-492A-A788-4844EE070B3D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>jianqiezhantie</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>jianqiezhantie_stone_file剪切粘贴</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

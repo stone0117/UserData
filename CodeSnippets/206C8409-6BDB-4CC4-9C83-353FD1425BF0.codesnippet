@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>手势识别</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ 点按手势   UITapGestureRecognizer
+ 长按手势   UILongPressGestureRecognizer
+ 轻扫       UISwipeGestureRecognizer
+ 旋转手势   UIRotationGestureRecognizer
+ 捏合       UIPinchGestureRecognizer
+ 拖拽       UIPanGestureRecognizer
+
+ 各种复位动作: 代码
+ UIRotationGestureRecognizer --- rotation.rotation = 0;
+
+ UIPinchGestureRecognizer --- pinch.scale = 1;
+
+ UIPanGestureRecognizer --- [pan setTranslation:CGPointZero inView:self.imageView];
+ */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>206C8409-6BDB-4CC4-9C83-353FD1425BF0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>手势识别</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>手势识别_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>printf</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>printf("%&lt;#identifier#&gt;\n",&lt;#variable#&gt;);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>16C387B5-D4ED-4596-A424-95D5E534BB4F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>printf("%&lt;#identifier#&gt;",&lt;#variable#&gt;);</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>printf("%&lt;#identifier#&gt;",&lt;#variable#&gt;);_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

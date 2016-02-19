@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cellInterface</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>Preprocessor</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface STONETableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView * iconView;
+@property (weak, nonatomic) IBOutlet UILabel * titleLadel;
+@property (weak, nonatomic) IBOutlet UILabel * priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel * buyCountLabel;
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C843F9B1-F088-4476-B188-D71B31A8EB64</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cellInterface</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cellInterface_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makeSessionDownloadDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ // 获得NSURLSession对象
+ NSURLSession * session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
+ // 获得下载任务
+ self.task = [session downloadTaskWithURL:[NSURL URLWithString:@"http://120.25.226.186:32812/resources/videos/minion_01.mp4"]];
+ // 启动任务
+ [self.task resume];
+ */
+#pragma mark - &lt;NSURLSessionDownloadDelegate&gt;
+/**
+ * 每当写入数据到临时文件时，就会调用一次这个方法
+ * totalBytesExpectedToWrite:总大小
+ * totalBytesWritten: 已经写入的大小
+ * bytesWritten: 这次写入多少
+ */
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    NSLog(@"--------%f", 1.0 * totalBytesWritten / totalBytesExpectedToWrite);
+}
+/** 继续下载的时候调用 */
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
+{
+    NSLog(@"didResumeAtOffset");
+}
+/**
+ * 下载完毕就会调用一次这个方法
+ */
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+{
+    // 文件将来存放的真实路径
+    NSString * file = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
+    // 剪切location的临时文件到真实路径
+    NSFileManager * mgr = [NSFileManager defaultManager];
+    [mgr moveItemAtURL:location toURL:[NSURL fileURLWithPath:file] error:nil];
+}
+/** 作为与特定任务相关的最后一条消息发送。 错误可能是 * 零，这意味着，没有出错，该任务已完成。 */
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+{
+    NSLog(@"didCompleteWithError");
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>75348FC4-9482-4CC7-B6C3-44A112B8C649</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>makeSessionDownloadDelegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>makeSessionDownloadDelegate_stone_session下载</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mainThread</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	//	[self.imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
+	//	[self.imageView performSelector:@selector(setImage:) onThread:[NSThread mainThread] withObject:image waitUntilDone:NO];
+	[self performSelectorOnMainThread:@selector(showImage:) withObject:image waitUntilDone:YES];
+    /*
+    - (void)showImage:(UIImage *)image
+    {
+        self.imageView.image = image;
+    }
+    */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>044FA34E-0568-476E-8B34-A1DD1DF18E3F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mainThread</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mainThread_stone_跳回main线程</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>combineImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSOperationQueue * queue = [[NSOperationQueue alloc] init];
+
+    __block UIImage * image1 = nil;
+    NSBlockOperation * op1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSURL * url = [NSURL URLWithString:@"file:///Users/stone/Pictures/Snip20150710_1.png"];
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        image1 = [UIImage imageWithData:data];
+    }];
+    __block UIImage * image2 = nil;
+    NSBlockOperation * op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSURL * url = [NSURL URLWithString:@"file:///Users/stone/Pictures/Snip20150710_2.png"];
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        image2 = [UIImage imageWithData:data];
+    }];
+    __block UIImage * combineImage = nil;
+    NSBlockOperation * combine = [NSBlockOperation blockOperationWithBlock:^{
+
+        UIGraphicsBeginImageContext(self.view.bounds.size);
+        /** 不让图片变形 */
+        CGFloat scaleWH1 = image1.size.width / image1.size.height;
+        CGFloat scaleWH2 = image2.size.width / image2.size.height;
+        /** 把image1 &amp; image2 画到画布上. */
+        [image1 drawInRect:CGRectMake(0, 0, screenW * 0.5, screenW * 0.5 / scaleWH1)];
+        [image2 drawInRect:CGRectMake(screenW * 0.5, 0, screenW * 0.5, screenW * 0.5 / scaleWH2)];
+
+        combineImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+
+        /** 任务添加到主队列,修改UI, 不需要的话注释掉. */
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.imageView.image = combineImage;
+        }];
+    }];
+
+    /** combine 在 op1 &amp; op2 结束之后 */
+    [combine addDependency:op1];
+    [combine addDependency:op2];
+    
+    /** 任务加到队列里 */
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:combine];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F171BABA-9D74-4A9B-9AE8-1C4FF8FEA6E4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>combineImage</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>combineImage_stone_图片合成</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

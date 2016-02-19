@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makeView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UIView * redView = [[UIView alloc] init];
+
+redView.backgroundColor = [UIColor redColor];
+
+CGFloat width = 100;
+CGFloat height = 100;
+redView.bounds = CGRectMake(0, 0, width,height);
+redView.center = self.view.center;
+
+[self.view addSubview:redView];
+self.redView = redView;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A162D769-229C-4717-9D19-A5C1A3D8877A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>makeView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>makeView_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

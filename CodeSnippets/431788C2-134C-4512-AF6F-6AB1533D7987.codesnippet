@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>layoutsubviews</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)layoutSubviews
+{
+    // 一定要调用super的layoutSubviews
+    [super layoutSubviews];
+
+    CGFloat shopW = self.frame.size.width;
+    CGFloat shopH = self.frame.size.height;
+    self.iconView.frame = CGRectMake(0, 0, shopW, shopW);
+    self.nameLabel.frame = CGRectMake(0, shopW, shopW, shopH - shopW);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>431788C2-134C-4512-AF6F-6AB1533D7987</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>layoutsubviews</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>layoutsubviews_stone_一定要用super</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

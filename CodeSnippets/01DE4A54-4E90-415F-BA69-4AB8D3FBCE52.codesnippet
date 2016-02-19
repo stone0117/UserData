@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>imgInLayer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    CALayer * layer = [CALayer layer];
+    layer.frame = CGRectMake(50, 50, 200, 200);
+
+    UIImage * image = [UIImage imageNamed:@"阿狸头像"];
+    layer.contents = (id)image.CGImage;
+
+    [self.view.layer addSublayer:layer];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>01DE4A54-4E90-415F-BA69-4AB8D3FBCE52</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>imgInLayer</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>imgInLayer_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

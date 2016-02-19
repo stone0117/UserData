@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zipFile</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//#import "Main.h"
+//Build Phases ---&gt; Link Binary With Libraries ---&gt; 点+号 ---&gt; libz.dylib
+// 还有另外一种框架 : SSZipArchive
+/** 解压 | 压缩包 ---&gt; 到指定目录 */
+- (void)unzipFile
+{
+	[Main unzipFileAtPath:@"/Users/xiaomage/Desktop/TestAbc.zip" toDestination:@"/Users/xiaomage/Desktop"];
+}
+/** 压缩 | 压缩目录里的文件 ---&gt; 到指定目录下的zip中. */
+- (void)createZipFile2
+{
+	[Main createZipFileAtPath:@"/Users/stone/Desktop/TestAbc.zip" withContentsOfDirectory:@"/Users/stone/Pictures/item"];
+}
+/** 压缩 | 压缩数组里的文件 ---&gt; 到指定目录下的zip中 */
+- (void)createZipFile
+{
+	NSArray * paths = @[
+		@"/Users/stone/Pictures/sucai/aa.jpg",
+		@"/Users/stone/Pictures/sucai/bb.jpg",
+        @"/Users/stone/Pictures/sucai/cc.png"
+	];
+	[Main createZipFileAtPath:@"/Users/stone/Desktop/TestAbc.zip" withFilesAtPaths:paths];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>88C8C1B3-D357-440A-8722-7A2292CC8E12</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>zipFile</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>zipFile_stone_压缩_解压文件</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

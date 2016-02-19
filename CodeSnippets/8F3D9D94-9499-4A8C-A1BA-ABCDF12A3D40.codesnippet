@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>reDraw</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - 重绘
+- (void)reDraw
+{
+	// 把图层移除父控件，复制层也会移除。
+	[_dotLayer removeFromSuperlayer];
+	_dotLayer = nil;
+	// 清空绘图信息
+	_path = nil;
+	[self setNeedsDisplay];
+	// 清空子层总数
+	_instansCount = 0;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8F3D9D94-9499-4A8C-A1BA-ABCDF12A3D40</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>reDraw</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>reDraw_stone_重绘</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

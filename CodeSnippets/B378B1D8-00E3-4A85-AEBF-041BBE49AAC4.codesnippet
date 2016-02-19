@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cellImageView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//[self setCellImageView:cell.imageView model:model tableView:tableView indexPath:indexPath];
+////======================== stone ===
+///**
+// *  @author stone, 15-07-11 04:07:31
+// *
+// *  三级缓存判断
+// *
+// *  @param imageView cell.imageView
+// *  @param model     模型数据
+// *  @param tableView tableView
+// *  @param indexPath indexPath
+// */
+//- (void)setCellImageView:(UIImageView *)imageView model:(STONEModel *)model tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
+//{
+//	//1.缓存去图片,开始 也是最终取图片的最佳地方
+//	UIImage * image = self.images[model.icon];
+//	if (image) {
+//		imageView.image = image;
+//	} else {
+//
+//		/** 拿到数据是用(...)括起来的, 即是个数组,所以去除(...)是用first OR last OR [0] */
+//		NSString * cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+//		/** 容器名 */
+//		NSString * fileName = [model.icon lastPathComponent];
+//		/** 给容器设置位置 */
+//		NSString * file = [cachePath stringByAppendingString:fileName];
+//		/** 使用容器接收数据 */
+//		NSData * data = nil; //[NSData dataWithContentsOfFile:file];
+//		if (data) {
+//			UIImage * image = [UIImage imageWithData:data];
+//			imageView.image = image;
+//			self.images[model.icon] = image;
+//		} else { // 下载图片
+//			imageView.image = [UIImage imageNamed:@"t01077fd80ffb5c8740"];
+//
+//			NSOperation * operation = self.operations[model.icon];
+//			if (operation == nil) {
+//				// 这张图片暂时没有下载任务
+//				operation = [NSBlockOperation blockOperationWithBlock:^{
+//				    // 下载图片
+//
+//				    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.icon]];
+//				    [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]]; //离现在过去2秒之后继续
+//				    // 数据加载失败
+//				    if (data == nil) {
+//					    // 移除操作
+//					    [self.operations removeObjectForKey:model.icon];
+//					    return;
+//				    }
+//
+//				    UIImage * image = [UIImage imageWithData:data];
+//
+//				    // 回到主线程显示图片
+//				    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//					/** 我觉得字典赋值最好放主线程, 也浪费不了多少资源把. */
+//					// 写在子线程里, 因为 image 是内部变量, 会发生 提前释放的bug, 最好写在主线程里,确保付完值刷新表格.
+//					self.images[model.icon] = image;
+//					[tableView reloadRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationNone];
+//				    }];
+//				    // 将图片文件数据写入沙盒中
+//				    [data writeToFile:file atomically:YES];
+//				    // 移除操作
+//				    [self.operations removeObjectForKey:model.icon];
+//				}];
+//
+//				// 添加到队列中
+//				[self.queue addOperation:operation];
+//
+//				// 存放到字典中
+//				self.operations[model.icon] = operation;
+//			}
+//		}
+//	}
+//}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B378B1D8-00E3-4A85-AEBF-041BBE49AAC4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cellImageView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cellImageView_stone_设置cellImageView_三级缓存</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

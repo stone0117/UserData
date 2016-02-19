@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>lvv</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)loadView
+{
+    UIView * mView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    mView.backgroundColor = [UIColor darkGrayColor];
+    self.view = mView;
+
+    /*
+     UIImageView * imageView = [[UIImageView alloc] init];
+     self.imageView = imageView;
+     [self.view addSubview:imageView];
+     */
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3D0B70D0-D9AD-4CC4-8F58-1908D1ACECFE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>loadView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>loadView_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

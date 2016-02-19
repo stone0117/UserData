@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>afmanager</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"
+                             parameters:params
+                                success:^(NSURLSessionDataTask * task, id responseObject) {
+                                    &lt;#code#&gt;
+                                    [self.tableView reloadData];
+                                }
+                                failure:^(NSURLSessionDataTask * task, NSError * error){
+
+                                }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E01AA394-176C-4EC1-A57C-CC2383419B80</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>afmanager</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>afmanager_stone_AFHTTPSessionManager</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

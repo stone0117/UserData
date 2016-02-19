@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>catransition过场动画</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    CATransition * anim = [CATransition animation];
+    /* 1.#define定义的常量
+     kCATransitionFade   交叉淡化过渡
+     kCATransitionMoveIn 新视图移到旧视图上面
+     kCATransitionPush   新视图把旧视图推出去
+     kCATransitionReveal 将旧视图移开,显示下面的新视图
+
+     2.用字符串表示
+     pageCurl            向上翻一页
+     pageUnCurl          向下翻一页
+     rippleEffect        滴水效果
+     suckEffect          收缩效果，如一块布被抽走
+     cube                立方体效果
+     oglFlip             上下翻转效果 */
+    anim.type = kCATransitionFade;
+    anim.duration = 1.0;
+    [self.imageView.layer addAnimation:anim forKey:nil];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>294CD506-6C18-402F-B55B-D3587962C3CE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>catransition</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>catransition_stone_过场动画</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

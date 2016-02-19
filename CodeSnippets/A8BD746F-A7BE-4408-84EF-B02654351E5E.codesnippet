@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setImageViewImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/** 需要全路径,扩展名也需要 */
+[self setImageView:self.imageView ImageName:@"267870_12120G3202636.jpg"];
+/*
+ - (void)setImageView:(UIImageView *)imageView ImageName:(NSString *)imageName
+ {
+	NSRange range = NSMakeRange(0, imageName.length - 4);
+	NSString * str = [imageName substringWithRange:range];
+	UIImage * image = [UIImage imageNamed:str];
+
+	if (!image) {
+ NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"file:///Users/stone/Pictures/sucai/%@", imageName]];
+ NSData * data = [NSData dataWithContentsOfURL:url];
+ image = [UIImage imageWithData:data];
+	}
+
+	CGFloat scaleWH = image.size.width / image.size.height;
+	CGRect frame = imageView.frame;
+	if (!frame.size.width) {
+ CGFloat x = 0;
+ CGFloat y = 20;
+ CGFloat width = [UIScreen mainScreen].bounds.size.width;
+ CGFloat height = CGFLOAT_MAX;
+ frame = CGRectMake(x, y, width, height);
+	}
+	// 知道宽度, 求 height(高度)
+ if (frame.origin.y &lt; 20) {
+ frame.origin.y = 20;
+ }
+	imageView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.width / scaleWH);
+	//    知道宽度, 求 height(高度)
+	//    self.imageView.frame = CGRectMake(50, 50, 200, 200 / scaleWH);
+	imageView.image = image;
+ }
+ */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A8BD746F-A7BE-4408-84EF-B02654351E5E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>setImageViewImage</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setImageViewImage_stone_不改变图片比例设置</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

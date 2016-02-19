@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>panState</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	if (pan.state == UIGestureRecognizerStateBegan) {
+
+	} else if (pan.state == UIGestureRecognizerStateChanged) {
+
+	} else if (pan.state == UIGestureRecognizerStateEnded) {
+
+	}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1DC486E7-6002-4EC7-B2CD-0B9A3FC3FD56</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>panState</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>panState_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

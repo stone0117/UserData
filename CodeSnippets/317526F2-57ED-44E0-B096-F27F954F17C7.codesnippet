@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cabasicanimation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>CABasicAnimation * anim = [CABasicAnimation animation];
+// 描述下修改哪个属性产生动画
+// anim.keyPath = @"position";
+// 只能是layer属性
+/** keyPath 关键路径 */
+anim.keyPath = @"transform.scale";
+/** anim.fromValue 可以不写, 不写得话是现在的状态 */
+anim.fromValue = @1.0;
+//--------------------
+anim.toValue = @0.1;
+
+anim.duration = duration;
+/**  设置动画执行次数 */
+anim.repeatCount = MAXFLOAT;
+/** 给图层layer添加动画 */
+[layer addAnimation:anim forKey:nil];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>317526F2-57ED-44E0-B096-F27F954F17C7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cabasicanimation</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cabasicanimation_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

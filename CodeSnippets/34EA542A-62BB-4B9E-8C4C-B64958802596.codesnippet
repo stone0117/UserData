@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>modelGet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSArray *)modelData
+{
+    if (_modelData == nil) {
+
+        _modelData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"&lt;#heroes#&gt;" ofType:@"plist"]];
+
+        NSMutableArray * mtarr = [[NSMutableArray alloc] init];
+
+        for (NSDictionary * dict in _modelData) {
+            STONEModel * model = [STONEModel modelWithDict:dict];
+            [mtarr addObject:model];
+        }
+        _modelData = mtarr;
+        //        NSLog(@"调用几次了??");
+    }
+    return _modelData;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>34EA542A-62BB-4B9E-8C4C-B64958802596</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>model_get</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>model_get_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

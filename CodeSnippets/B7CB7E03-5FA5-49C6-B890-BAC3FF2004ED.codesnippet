@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>danlimoshi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>StringOrComment</string>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+    创建 STONESingleton.h 文件, 把下面的内容丢进去. .h .m 文件写入位置 参考下面代码
+*/
+
+// .h文件
+#define STONESingletonH(name) +(instancetype)shared##name;
+
+// .m文件
+#define STONESingletonM(name)                                                            \
+	static id _instance;                                                             \
+                                                                                         \
+	+(instancetype)allocWithZone : (struct _NSZone *)zone                            \
+	{                                                                                \
+		static dispatch_once_t onceToken;                                        \
+		dispatch_once(&amp;onceToken, ^{ _instance = [super allocWithZone:zone]; }); \
+		return _instance;                                                        \
+	}                                                                                \
+                                                                                         \
+	+(instancetype)shared##name                                                      \
+	{                                                                                \
+		static dispatch_once_t onceToken;                                        \
+		dispatch_once(&amp;onceToken, ^{ _instance = [[self alloc] init]; });        \
+		return _instance;                                                        \
+	}                                                                                \
+                                                                                         \
+	-(id)copyWithZone : (NSZone *)zone                                               \
+	{                                                                                \
+		return _instance;                                                        \
+	}
+
+/*
+.h 文件
+#import &lt;Foundation/Foundation.h&gt;
+#import "STONESingleton.h"
+
+@interface STONEPerson : NSObject
+
+@property (nonatomic, strong) NSString *name;
+// ***注意:****
+STONESingletonH(Person)
+@end
+
+.m 文件
+#import "STONEPerson.h"
+
+@interface STONEPerson()
+
+@end
+
+@implementation STONEPerson
+// ***注意:****
+STONESingletonM(Person)
+@end
+*/</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B7CB7E03-5FA5-49C6-B890-BAC3FF2004ED</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>danlimoshi</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>danlimoshi_stone_单例模式</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

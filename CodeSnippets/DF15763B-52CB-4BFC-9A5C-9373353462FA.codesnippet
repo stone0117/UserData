@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>delegateEstimate_代理实现判断</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    if ([_delegate respondsToSelector:@selector(activeMenuDidClickCloseButton:)]) {
+        [_delegate activeMenuDidClickCloseButton:self];
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DF15763B-52CB-4BFC-9A5C-9373353462FA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>delegateEstimate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>delegateEstimate_stone_代理实现判断</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

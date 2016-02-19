@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>strAttributes</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSString * str = @"hello world";
+    /** 文字的属性集合 */
+    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+
+    /** 颜色 */
+    dict[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    /** 字体 */
+    dict[NSFontAttributeName] = [UIFont systemFontOfSize:30];
+    /** 空心笔的粗度 越高空心就越填充*/
+    dict[NSStrokeWidthAttributeName] = @3;
+    /** 描边颜色 */
+    dict[NSStrokeColorAttributeName] = [UIColor yellowColor];
+
+    /** 创建阴影对象 */
+    NSShadow * shadow = [[NSShadow alloc] init];
+    /** 阴影颜色 */
+    shadow.shadowColor = [UIColor blackColor];
+    /** 阴影偏移量 */
+    shadow.shadowOffset = CGSizeMake(6, 6);
+    /** 阴影模糊度 */
+    shadow.shadowBlurRadius = 3;
+    dict[NSShadowAttributeName] = shadow;
+//    [str drawInRect:self.bounds withAttributes:dict];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3F6E3338-95BA-45C8-B91C-28310525E496</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>strAttributes</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>strAttributes_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mimetypeGet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ SDK文件 ---&gt; General ---&gt;Linked Frameworks and Libraries ---&gt; 添加 MobileCoreServices.framework
+ */
+/** 方法3: 纯C语言获取, 也许会很快, 没测试 */
++ (NSString *)mimeTypeForFileAtPath:(NSString *)path
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        return nil;
+    }
+    // 桥接 __bridge , foundation框架的字符串(NSString) 转换成 core foundation框架的字符串(CFStringRef) 需要桥接(__bridge)
+    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)[path pathExtension], NULL);
+    CFStringRef MIMEType = UTTypeCopyPreferredTagWithClass(UTI, kUTTagClassMIMEType);
+    CFRelease(UTI);
+    if (!MIMEType) {
+        return @"application/octet-stream";
+    }
+    return (__bridge NSString *)MIMEType;
+}
+///** 方法2: 同步请求方法 */
+//- (NSString *)getMIMEType:(NSString *)filePath
+//{
+//    //  优点: 能马上拿到结果.
+//    NSURLResponse * response = nil;
+//    NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:filePath]];
+//    [NSURLConnection sendSynchronousRequest:request returningResponse:&amp;response error:nil];
+//    return response.MIMEType;
+//}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>15EE30EA-39A0-4C39-91EF-4EE4FD2DCB98</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mimetypeGet</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mimetypeGet_stone_MIMEType获取</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

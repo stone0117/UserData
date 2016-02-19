@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>uipangesturerecognizer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    [self.view addGestureRecognizer:pan];
+/*
+- (void)pan:(UIPanGestureRecognizer *)pan
+{
+    CGPoint curP = [pan locationInView:self.view];
+
+    if (pan.state == UIGestureRecognizerStateBegan) {
+
+    } else if (pan.state == UIGestureRecognizerStateChanged) {
+
+    } else if (pan.state == UIGestureRecognizerStateEnded) {
+        
+    }
+}
+*/</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D1D9AC46-155D-4FCC-917F-1C0071DE7A74</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>uipangesturerecognizer</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>uipangesturerecognizer_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>transformToAngle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // #define radianToDegreeTo(x) ((x) * 180 / M_PI)
+    /** 通过transform 获取旋转的弧度,当然也可以转换成角度 */
+    CGFloat angle = atan2(_selBtn.transform.b, _selBtn.transform.a);
+    /** 用得到的 弧度 取反 就能到原点. */
+    _centerView.transform = CGAffineTransformMakeRotation(-angle);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7450E96B-551A-4DC6-BAC4-ABF115F17963</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>transformToAngle</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>transformToAngle_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

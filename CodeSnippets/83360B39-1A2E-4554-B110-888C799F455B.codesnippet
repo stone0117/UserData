@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>chuanhangQueue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/** 串行队列 */
+dispatch_queue_t queue = dispatch_queue_create("com.dispatch.serial", DISPATCH_QUEUE_SERIAL);
+/** NULL == DISPATCH_QUEUE_SERIAL */
+//    dispatch_queue_t queue = dispatch_queue_create("com.520it.queue", NULL);
+/** 主队列 */
+//    dispatch_queue_t queue = dispatch_get_main_queue();</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>83360B39-1A2E-4554-B110-888C799F455B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>chuanhangQueue</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>chuanhangQueue_stone_串行队列+主队列</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jiugongge_九宫格</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)awakeFromNib
+{
+	for (int i = 0; i &lt; 9; i++) {
+		UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+		[btn setImage:[UIImage imageNamed:@"gesture_node_normal"] forState:UIControlStateNormal];
+		[btn setImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
+
+		[self addSubview:btn];
+	}
+}
+- (void)layoutSubviews
+{
+	int cols = 3;
+
+	CGFloat x = 0;
+	CGFloat y = 0;
+	CGFloat width = 74;
+	CGFloat height = 74;
+	CGFloat margin = (self.bounds.size.width - cols * width) / (cols + 1);
+
+	CGFloat col = 0;
+	CGFloat row = 0;
+
+	for (int i = 0; i &lt; self.subviews.count; i++) {
+		UIButton * btn = self.subviews[i];
+
+		col = i % cols;
+		row = i / cols;
+		x = margin + col * (margin + width);
+		y = 0 + row * (margin + width);
+		btn.frame = CGRectMake(x, y, width, height);
+	}
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>989558FB-EA26-40FC-89D7-A7A274EDCD6A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>九宫格</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>jiugongge_九宫格_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

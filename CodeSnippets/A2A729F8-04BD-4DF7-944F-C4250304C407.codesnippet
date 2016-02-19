@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>modelRuntime</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSDictionary * mapDict = @{
+                               @"ID" : @"id",
+                               @"HTML" : @"html"
+                               };
+    //    STONEHtmlItem *item = [STONEHtmlItem objcWithDict:dict mapDict:mapDict];
+    STONEHtmlItem * item = nil;
+    //#import "NSObject+Model.h"
+    //#import &lt;objc/runtime.h&gt;
+    //    @implementation NSObject (Model)
+    //    + (instancetype)objcWithDict:(NSDictionary *)dict mapDict:(NSDictionary *)mapDict
+    //    {
+    id objc = [[self alloc] init];
+
+    // 遍历模型中属性
+    unsigned int count = 0;
+    // 取出模型中所有属性
+    Ivar * ivars = class_copyIvarList(self, &amp;count);
+    // 遍历模型中所有属性
+    for (int i = 0; i &lt; count; i++) {
+        // 取出属性
+        Ivar ivar = ivars[i];
+        // 获取属性名称（加下划线的属性名称）
+        NSString * ivarName = @(ivar_getName(ivar));
+        // 截取属性名称（取出下划线的属性名称）
+        ivarName = [ivarName substringFromIndex:1];
+        // 从字典中读取属性值
+        id value = dict[ivarName];
+        // 如果没有取到，进一步处理
+        if (value == nil) {
+            // 需要由外界通知内部，模型中属性名对应字典里面的哪个key：mapDict
+            // ID -&gt; id
+            if (mapDict) {
+                // 改变对应的key（属性名）
+                NSString * keyName = mapDict[ivarName];
+                value = dict[keyName];
+            }
+        }
+        // 将取到的值赋给对应的属性
+        [objc setValue:value forKeyPath:ivarName];
+    }
+    //        return objc;
+    //    }
+    item = objc;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A2A729F8-04BD-4DF7-944F-C4250304C407</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>modelRuntime</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>modelRuntime_stone_万能model</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

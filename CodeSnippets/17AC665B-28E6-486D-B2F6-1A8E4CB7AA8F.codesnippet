@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>protocol</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>Preprocessor</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@class &lt;#STONEActiveMenu#&gt;;
+@protocol &lt;#STONEActiveMenu#&gt;Delegate &lt;NSObject&gt;
+
+@optional
+- (void)&lt;#activeMenu#&gt;DidClickCloseButton:(&lt;#STONEActiveMenu#&gt; *)&lt;#activeMenu#&gt;;
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>17AC665B-28E6-486D-B2F6-1A8E4CB7AA8F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>@protocol &lt;#parameters#&gt;;</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>@protocol_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

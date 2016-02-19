@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jsonjiexi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSURL * url = [NSURL URLWithString:addStr(RootURLPath, @"video")];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    /** 注意 异步函数 把事件加入到队列之后的 生命周期 &amp; 执行顺序. */
+    // queue:[[NSOperationQueue alloc] init] &amp; [NSOperationQueue mainQueue] 选择哪个?? 有何不同??
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse * response, NSData * data, NSError * connectionError) {
+
+                               NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+
+                               //				   self.videos = dict[@"videos"];
+                               self.videos = [STONEVideo objectArrayWithKeyValuesArray:dict[@"videos"]];
+
+                               [self.tableView reloadData];
+
+                           }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9CE357C0-44E0-4586-904A-0087001BADB4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>jsonjiexi</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>jsonjiexi_stone_JSON解析</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

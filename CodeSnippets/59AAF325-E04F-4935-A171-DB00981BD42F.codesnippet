@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makeGCDDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ NSURL * url = [NSURL URLWithString:@"http://120.25.226.186:32812/resources/images/minion_01.png"];
+ NSURLRequest * request = [NSURLRequest requestWithURL:url];
+
+ dispatch_async(dispatch_get_global_queue(0, 0), ^{
+ NSURLConnection * conn = [NSURLConnection connectionWithRequest:request delegate:self];
+ // 决定代理方法在哪个队列中执行
+ [conn setDelegateQueue:[[NSOperationQueue alloc] init]];
+
+ self.runLoop = CFRunLoopGetCurrent();
+ // 启动runLoop
+ CFRunLoopRun();
+ });
+ */
+
+#pragma mark - &lt;NSURLConnectionDataDelegate&gt;
+/** 接收响应 */
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"didReceiveResponse----%@", [NSThread currentThread]);
+}
+/** 接收数据 */
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"didReceiveData----%@", [NSThread currentThread]);
+}
+/** 结束加载 */
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"connectionDidFinishLoading----%@", [NSThread currentThread]);
+    // 停止RunLoop
+    CFRunLoopStop(self.runLoop);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>59AAF325-E04F-4935-A171-DB00981BD42F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>makeGCDDelegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>makeGCDDelegate_stone_GCD下载方法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

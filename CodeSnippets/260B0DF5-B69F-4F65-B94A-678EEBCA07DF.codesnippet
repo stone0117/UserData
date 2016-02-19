@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>gcdtimer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>	/** 最精确的timer */
+	// Δtime &lt;--- delta
+	float deltaTime = 0.0;
+	float duration = 1.0;
+	// 获得队列
+	/** 自定义并发队列 */
+	//  dispatch_queue_t queue = dispatch_queue_create("com.dispatch.concurrent", DISPATCH_QUEUE_CONCURRENT);
+	/** 全局并发队列 */
+	//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+	dispatch_queue_t queue = dispatch_get_main_queue();
+	self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+	dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(deltaTime * NSEC_PER_SEC));
+	uint64_t interval = (uint64_t)(duration * NSEC_PER_SEC);
+	dispatch_source_set_timer(self.timer, start, interval, 0);
+	dispatch_source_set_event_handler(self.timer, ^{
+	    NSLog(@"------------%@", [NSThread currentThread]);
+        //写到方法体外面去, 用变量来判断关闭...
+        //        static int count = 0;
+        //        count++;
+	});
+	dispatch_resume(self.timer);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>260B0DF5-B69F-4F65-B94A-678EEBCA07DF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>gcdtimer</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCDTimer_stone_最精确的timer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>buglog</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#ifdef DEBUG
+#define NSLog(FORMAT, ...) do{fprintf(stderr, "&lt;%s %s:%d&gt;-:%s\n", [[[[NSDate date] dateByAddingTimeInterval:[[NSTimeZone systemTimeZone] secondsFromGMTForDate:[NSDate date]]].description substringWithRange:NSMakeRange(11, 8)] UTF8String],[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);}while(0)
+#else
+#define NSLog
+#endif
+//=************************ stone ***
+#define NSLogRect(rect) NSLog(@"%s x:%.4f, y:%.4f, w:%.4f, h:%.4f", #rect, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)
+#define NSLogSize(size) NSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
+#define NSLogPoint(point) NSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)
+//=************************ stone ***
+// 宏里面的#, 会自动把后面的参数变成C语言的字符串
+// 宏的操作原理, 没输入一个字母就会直接把宏右边的拷贝, 并且会自动补齐前面的内容
+// 逗号表达式, 只取最右边的值.
+// void表示的是"我肯定不用你,你不要给我警告"
+// addObserver , 为了keypath的时候防止错误 &amp; 有提示 而做的宏
+#define keyPath(objc,keyPath) @(((void)objc.keyPath,#keyPath))
+//=************************ stone ***</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>84270226-E8C6-4597-970E-619EB171E1CD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>buglog_stone</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>buglog_stone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Adapter</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - &lt;UITableViewDataSource&gt;
+/** 一共多少组 */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+
+    return 1;
+}
+/** 一组 多少行 */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    return self.modelData.count;
+}
+
+/** 一行 显示内容 */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    STONETableViewCell * cell = [STONETableViewCell cellWithTableView:tableView];
+    cell.model = self.modelData[indexPath.row];
+
+    return cell;
+}
+#pragma mark - &lt;UITableViewDelegate&gt;
+
+/** 模糊计算高度 */
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+}
+/** 重新计算高度 */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    STONEModel * model = self.modelData[indexPath.row];
+    return model.cellHeight;
+}
+/** title 头部 描述 */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+
+    return nil;
+}
+
+/** title 尾部 描述 */
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+
+    return nil;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CF71156E-223B-4DAD-9FB8-8515A1A147D7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>tableAdapter</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>    STONETableViewCell * cell = [STONETableViewCell cellWithTableView:tableView];
+    cell.&lt;#hero#&gt; = self.&lt;#heroes#&gt;[indexPath.row];
+
+    return cell;</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
